@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Layanan Laboratorium Kombis - Politeknik Negeri Tanah Laut</title>
+
+    <!-- Bagian CSS: Untuk membuat tampilan persis seperti gambar -->
+    <style>
+        /* Pengaturan Dasar */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f8fafc;
+            /* Warna background abu-abu sangat muda */
+        }
+
+        /* Navigasi */
+        header {
+            background-color: #fff;
+            padding: 15px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 40px;
+            height: auto;
+        }
+
+        .title-sub {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #1a202c;
+            line-height: 1.2;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+        }
+
+        .btn-login {
+            background-color: #3182ce;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        /* Hero Section (Sistem Layanan Kombis Mudah) */
+        .hero {
+            display: flex;
+            align-items: center;
+            padding: 50px 10%;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e0f2ff 100%);
+        }
+
+        .hero-content {
+            flex: 1;
+            padding-right: 50px;
+        }
+
+        .hero-text {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #1e3a8a;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        .hero-banner {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px 25px;
+            border-radius: 10px;
+            border: 2px solid #3182ce;
+            color: #1e3a8a;
+            box-shadow: 0 4px 6px -1px rgba(49, 130, 206, 0.1);
+        }
+
+        .hero-image {
+            flex: 1;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Feature Cards (Terintegrasi, Aman, Cepat) */
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px 10%;
+            background-color: #fff;
+            margin: 30px 10%;
+            border-radius: 15px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-card {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .feature-icon {
+            font-size: 2em;
+            color: #3182ce;
+            margin-bottom: 10px;
+        }
+
+        .feature-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .feature-desc {
+            font-size: 0.8em;
+            color: #718096;
+        }
+
+        /* Layanan Utama SECTION */
+        .services {
+            padding: 40px 10%;
+            text-align: center;
+        }
+
+        .services-header {
+            font-size: 2em;
+            color: #1e3a8a;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .services-sub {
+            color: #718096;
+            font-size: 0.9em;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #1a202c;
+        }
+
+        .service-card-desc {
+            font-size: 0.8em;
+            color: #718096;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 40px 10%;
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .footer-logo {
+            flex: 1.5;
+        }
+
+        .footer-logo img {
+            width: 50px;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo .text {
+            font-size: 0.85em;
+            line-height: 1.6;
+        }
+
+        .footer-nav {
+            flex: 1;
+        }
+
+        .footer-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-nav a {
+            text-decoration: none;
+            color: #e2e8f0;
+            font-size: 0.85em;
+        }
+
+        .footer-contact {
+            flex: 1.5;
+            font-size: 0.85em;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header & Navigasi -->
+    <header>
+        <div class="logo-wrapper">
+            <img src="https://via.placeholder.com/150" alt="Logo POLITALA" class="logo">
+            <!-- Ganti logo dengan logo Politala asli jika ada -->
+            <div class="title-sub">Laboratorium Terpadu KOMBIS<br>Politeknik Negeri Tanah Laut</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Tentang</a></li>
+                <li><a href="#">Layanan</a></li>
+                <li><a href="#">Fasilitas</a></li>
+                <li><a href="#" class="btn-login">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">Sistem<br>Layanan<br>Laboratorium<br>Kombis<br>dengan Mudah.</div>
+            <div class="hero-banner">Selamat Datang di website Laboratorium Terpadu KOMBIS</div>
+        </div>
+        <div class="hero-image">
+            <img src="gedung.jpg" alt="Gedung Politala Kombis"> <!-- Pastikan file gedung.jpg sudah ada di folder -->
+        </div>
+    </section>
+
+    <!-- Fitur & Kartu Keunggulan -->
+    <section class="features">
+        <div class="feature-card">
+            <div class="feature-icon">📊</div> <!-- Ganti dengan icon jika ada -->
+            <div class="feature-title">Terintegrasi</div>
+            <div class="feature-desc">Satu sistem untuk semua layanan KOMBIS</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <div class="feature-title">Aman & Terpercaya</div>
+            <div class="feature-desc">Kerahasiaan data Anda aman dan terjaga</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">⏱️</div>
+            <div class="feature-title">Cepat & Mudah</div>
+            <div class="feature-desc">Proses layanan lebih cepat dan efisien</div>
+        </div>
+    </section>
+
+    <!-- Layanan Utama Section -->
+    <section class="services">
+        <div class="services-header">Layanan Utama KOMBIS</div>
+        <div class="services-sub">Pilih layanan yang Anda butuhkan untuk mendapatkan bantuan atau akses informasi
+            terkait laboratorium</div>
+
+        <div class="service-grid">
+            <!-- Layanan 1-3 -->
+            <div class="service-card">
+                <div class="feature-icon">📄</div>
+                <div class="service-card-title">Pengaduan</div>
+                <div class="service-card-desc">Laporkan keluhan atau masukan terkait layanan laboratorium.</div>
+            </div>
+            <div class="service-card">
+                <div class="feature-icon">📥</div>
+                <div class="service-card-title">Peminjaman Alat</div>
+                <div class="service-card-desc">Ajukan peminjaman alat laboratorium sesuai kebutuhan Anda.</div>
+            </div>
+            <div class="service-card">
+                <div class="feature-icon">🧪</div>
+                <div class="service-card-title">Penggunaan Bahan</div>
+                <div class="service-card-desc">Ajukan penggunaan bahan laboratorium.</div>
+            </div>
+
+            <!-- Layanan 4-6 -->
+            <div class="service-card">
+                <div class="feature-icon">🖥️</div>
+                <div class="service-card-title">Pemakaian Alat</div>
+                <div class="service-card-desc">Ajukan pemakaian alat laboratorium sesuai kebutuhan Anda.</div>
+            </div>
+            <div class="service-card">
+                <div class="feature-icon">🚪</div>
+                <div class="service-card-title">Peminjaman Ruangan</div>
+                <div class="service-card-desc">Ajukan peminjaman ruangan laboratorium sesuai kebutuhan Anda.</div>
+            </div>
+            <div class="service-card">
+                <div class="feature-icon">📅</div>
+                <div class="service-card-title">Jadwal Lab</div>
+                <div class="service-card-desc">Ajukan jadwal laboratorium setelah menyelesaikan kewajiban praktikum.Klik
+                    **dua kali** pada file **`Index.html`** di dalam folder laptop Anda untuk langsung membukanya di
+                    browser dan melihat hasilnya.
